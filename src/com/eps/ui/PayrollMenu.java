@@ -44,7 +44,7 @@ public class PayrollMenu {
             return;
         }
 
-        System.out.println("\n***** PAYSLIP *****");
+        System.out.println("\n***** payslip *****");
         System.out.println("Employee ID: " + p.getEmployeeId());
         System.out.println("Basic Salary: " + p.getBasicSalary());
         System.out.println("Overtime: " + p.getOvertime());
