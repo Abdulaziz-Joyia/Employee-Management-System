@@ -16,6 +16,8 @@ public class MainMenu {
         this.payrollService = payrollService;
     }
 
+
+
     public void start() {
         while (true) {
             System.out.println("\n=== MAIN MENU ===");
@@ -24,11 +26,12 @@ public class MainMenu {
             System.out.println("0. Exit");
             System.out.print("Choose: ");
 
-            int ch = sc.nextInt();
+            int ch = Integer.parseInt(sc.nextLine());
 
             switch (ch) {
 
-                case 1 -> new EmployeeMenu(empService).show();
+                case 1 -> new EmployeeMenu(empService, sc).show();
+
                 case 2 -> new PayrollMenu(payrollService).show();
 
                 case 0 -> {

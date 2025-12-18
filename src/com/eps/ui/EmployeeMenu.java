@@ -6,15 +6,18 @@ import com.eps.service.EmployeeService;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
+import com.eps.util.InputValidator;
 
 public class EmployeeMenu {
 
+    private final Scanner sc;
     private final EmployeeService service;
-    private final Scanner sc = new Scanner(System.in);
 
-    public EmployeeMenu(EmployeeService service) {
+    public EmployeeMenu(EmployeeService service, Scanner sc) {
         this.service = service;
+        this.sc = sc;
     }
+
 
     public void show() {
         while (true) {
@@ -44,25 +47,56 @@ public class EmployeeMenu {
     }
 
     private void add() {
-        System.out.print("Name: ");
+
+        System.out.print("Enter Name (string): ");
         String name = sc.nextLine();
 
-        System.out.print("Designation: ");
+        if (!InputValidator.isValidString(name)) {
+            System.out.println("❌ ERROR: Name must be STRING (alphabets only)");
+            return;
+        }
+
+        System.out.print("Enter Designation (string): ");
         String desig = sc.nextLine();
 
-        System.out.print("Basic Salary: ");
-        double sal = sc.nextDouble();
-        sc.nextLine();
+        if (!InputValidator.isValidString(desig)) {
+            System.out.println("❌ ERROR: Designation must be STRING");
+            return;
+        }
 
-        System.out.print("Phone: ");
-        String phone = sc.nextLine();
+        System.out.print("Enter ID (int): ");
+        String idStr = sc.nextLine();
 
-        System.out.print("Email: ");
-        String email = sc.nextLine();
+        if (!InputValidator.isValidInt(idStr)) {
+            System.out.println("❌ ERROR: ID must be INTEGER");
+            return;
+        }
 
-        service.addEmployee(name, desig, sal, phone, email);
-        System.out.println("Employee Added Successfully!");
+        System.out.print("Enter Phone (int): ");
+        String phoneStr = sc.nextLine();
+
+        if (!InputValidator.isValidInt(phoneStr)) {
+            System.out.println("❌ ERROR: Phone must be INTEGER");
+            return;
+        }
+
+        System.out.print("Enter Email (int): ");
+        String emailStr = sc.nextLine();
+
+        if (!InputValidator.isValidInt(emailStr)) {
+            System.out.println("❌ ERROR: Email must be INTEGER");
+            return;
+        }
+
+        System.out.print("Enter Salary: ");
+        double salary = Double.parseDouble(sc.nextLine());
+
+        service.addEmployee(name, desig, salary, phoneStr, emailStr);
+
+        System.out.println("✅ Employee Added Successfully");
     }
+
+
 
     private void update() {
         System.out.print("Enter Employee ID: ");
