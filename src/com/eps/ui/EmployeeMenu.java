@@ -89,10 +89,10 @@ public class EmployeeMenu {
         sc.nextLine();
 
         System.out.print("New Phone (" + e.getPhone() + "): ");
-        e.setPhone(sc.nextLine());
+        e.setPhone(Integer.parseInt(sc.nextLine()));
 
         System.out.print("New Email (" + e.getEmail() + "): ");
-        e.setEmail(sc.nextLine());
+        e.setEmail(Integer.parseInt(sc.nextLine()));
 
         service.updateEmployee(e);
         System.out.println("Employee Updated!");
