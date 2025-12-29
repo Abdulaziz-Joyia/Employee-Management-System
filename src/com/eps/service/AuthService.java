@@ -2,7 +2,6 @@ package com.eps.service;
 
 import com.eps.dao.UserRepository;
 import com.eps.model.User;
-import com.eps.model.User;
 
 public class AuthService {
 
