@@ -11,6 +11,7 @@ public class EmployeeService {
     private final EmployeeRepository repo;
 
     public EmployeeService(EmployeeRepository repo) {
+
         this.repo = repo;
     }
 
@@ -20,18 +21,22 @@ public class EmployeeService {
     }
 
     public boolean updateEmployee(Employee e) {
+
         return repo.update(e);
     }
 
     public boolean deleteEmployee(int id) {
+
         return repo.delete(id);
     }
 
     public List<Employee> getAllEmployees() {
+
         return repo.findAll();
     }
 
     public Optional<Employee> getEmployeeById(int id) {
+
         return repo.findById(id);
     }
 }

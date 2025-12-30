@@ -37,3 +37,22 @@ public class App {
         mainMenu.show();
     }
 }
+//step by step Read in code//
+/*
+App.java-->1
+📄 ui/LoginMenu.java--2
+📄 service/AuthService.java---3
+📄 dao/FileUserRepository.java--4
+📄 model/User.java--5
+📄 ui/MainMenu.java--6
+📄 ui/EmployeeMenu.java--7
+📄 service/EmployeeService.java--8
+📄 dao/FileEmployeeRepo.java---9
+📄 model/Employee.java--10
+📄 ui/PayrollMenu.java--11
+📄 service/PayrollService.java--12
+📄 dao/FilePayrollRepo.java--13
+📄 model/Payroll.java--14
+📄 util/InputValidator.java--15
+
+ */
